@@ -1,0 +1,44 @@
+.filter-input {
+    height: 40px;
+    width: 70%;
+    text-indent: 10px;
+}
+
+.contact-list {
+    list-style-type: none;
+    margin: 10px auto;
+    padding: 0;
+    background-color: rgb(239, 239, 239);
+    width: 70%;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(181, 181, 181);
+}
+
+.list-item span {
+    display: flex;
+}
+
+.form {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.form button {
+    width: 30%;
+}
+
+.form-input {
+    height: 40px;
+    width: 100%;
+    margin-right:15px;
+    margin-left: 0;
+    text-indent: 2px;
+}
