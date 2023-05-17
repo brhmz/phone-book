@@ -19,7 +19,7 @@ class Contact extends Component {
         const addContact = (data) => {
             const { contacts } = this.state
             contacts.push(data)
-            this.setState({ contacts: contacts })
+            this.setState({ contacts })
         }
 
         return (

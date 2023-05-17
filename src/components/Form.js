@@ -6,8 +6,19 @@ export default class Form extends Component {
   render() {
 
     const onSubmitFuntion = (e) => {
-      e.preventDefault()
-      this.props.addContact({ ...this.state })
+      e.preventDefault();
+      inputCleaner();
+      if (this.state.name === '') {
+        alert("Name can not be blank!")
+      } else {
+        this.props.addContact({ ...this.state })
+        this.setState({ name: '', phone: '' })
+      }
+    }
+
+    const inputCleaner = () => {
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
     }
 
     return (

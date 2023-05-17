@@ -5,13 +5,19 @@ import PropsTypes from 'prop-types'
 export default class List extends Component {
 
     static propTypes = {
-        contacts : PropsTypes.array.isRequired
+        contacts: PropsTypes.array.isRequired
     }
-
+    state = { filterInput: '' }
     render() {
+        const onChangeFilter = (e) => {
+            this.setState({ filterInput: e.target.value })
+        }
         return (
             <div>
-                <input className='filter-input' name='filter' id='filter' placeholder='Filter by name or number!'></input>
+                <input className='filter-input'
+                    name='filter' id='filter'
+                    placeholder='Filter by name or number!'
+                />
                 <ul className='contact-list'>
                     {this.props.contacts.map(item => {
                         return (
