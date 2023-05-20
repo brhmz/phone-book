@@ -12,14 +12,24 @@ export default class List extends Component {
         const onChangeFilter = (e) => {
             this.setState({ filterInput: e.target.value })
         }
+
+        const filteredContacts = this.props.contacts.filter(
+            item => {
+                return item.name.toLowerCase().indexOf(this.state.filterInput.toLowerCase()) !== -1
+                    || item.phone.toLowerCase().indexOf(this.state.filterInput.toLowerCase()) !== -1
+            }
+        )
+
         return (
             <div>
                 <input className='filter-input'
+                    onChange={onChangeFilter}
+                    value={this.state.filterInput}
                     name='filter' id='filter'
                     placeholder='Filter by name or number!'
                 />
                 <ul className='contact-list'>
-                    {this.props.contacts.map(item => {
+                    {filteredContacts.map(item => {
                         return (
                             <li className='list-item' key={item.phone}>
                                 <span>{item.name}</span>
